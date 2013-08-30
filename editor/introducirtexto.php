@@ -35,8 +35,8 @@ echo	'<form action="guardartexto.php?'.session_name()."=".session_id().'" method
 	?>
 	</select>
 	<input name="color" class="color" id="color" />
-	X:<input type="text" maxlength="3" value="" name="X" id="positionX"/>
-	Y:<input type="text" maxlength="3" value="" name="Y" id="positionY"/>
+	X:<input type="text" maxlength="5" value="" name="X" id="positionX"/>
+	Y:<input type="text" maxlength="5" value="" name="Y" id="positionY"/>
 
 	<!-- Botones de funciones javascript y envio -->
 	<input type="button" id="actualizar" value="actualizar" onclick="actualizartexto()"> </input>
@@ -45,8 +45,8 @@ echo	'<form action="guardartexto.php?'.session_name()."=".session_id().'" method
 	</form>
 	<div id="canvas" style="position: absolute; top: 60px; left: 0px;" onclick="" onmousemove="">
 	<p id="texto" style="zoom: 50%; position: absolute; margin: 0px; top: 0px; left: 0px;" ></p>
-	<?
-echo '<img src="genfondo.php?'.session_name()."=".session_id().'" style="zoom: 50%;" alt="" id="fondo" />';	
+	<?php
+echo '<img src="'.session_id().$_SESSION['i'].'.png" style="zoom: 50%;" alt="" id="fondo" />';	
 ?>	
 
 	</div>

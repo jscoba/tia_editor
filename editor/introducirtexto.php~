@@ -27,7 +27,8 @@ echo	'<form action="guardartexto.php?'.session_name()."=".session_id().'" method
 <option value="" selected="selected">- Tamaño -</option>
 	<?php
 	$i=14;
-	while($i<=52) {
+	while($i<=100
+) {
 	echo '<option value="'.$i.'">'.$i.'</option>';
 	$i++;
 	}
@@ -44,8 +45,8 @@ echo	'<form action="guardartexto.php?'.session_name()."=".session_id().'" method
 	</form>
 	<div id="canvas" style="position: absolute; top: 60px; left: 0px;" onclick="" onmousemove="">
 	<p id="texto" style="zoom: 50%; position: absolute; margin: 0px; top: 0px; left: 0px;" ></p>
-	<?
-echo '<img src="genfondo.php?'.session_name()."=".session_id().'" style="zoom: 50%;" alt="" id="fondo" />';	
+	<?php
+echo '<img src="'.session_id().$_SESSION['i'].'.png" style="zoom: 50%;" alt="" id="fondo" />';	
 ?>	
 
 	</div>

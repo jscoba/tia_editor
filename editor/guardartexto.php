@@ -23,14 +23,15 @@ $_SESSION['i']++;
 $_SESSION['colortexto']=HexToRGB($_POST['color']);
 
 $_SESSION['texto']=$_POST['text'];
-$_SESSION['size']=$_POST['size'];
+$_SESSION['size']=(int)$_POST['size'];
 $_SESSION['fuente']=$_POST['font'];
-$_SESSION['X']=$_POST['Y'];
-$_SESSION['Y']=$_POST['X'];
-if(file_exists(session_id().$_SESSION['i'].'.png')
+$_SESSION['X']=(int)$_POST['X'];
+$_SESSION['Y']=(int)($_POST['Y']+$_SESSION['size']);
+
+if(file_exists(session_id().($_SESSION['i']-1).'.png'))
 {
-	$pathfondo=session_id().$_SESSION['i'].'.png';
-}else {
+	$pathfondo=session_id().($_SESSION['i']-1).'.png';
+} else {
 	$pathfondo='fondo.png';	
 }
 //$pathfondo='fondo.png';
@@ -38,7 +39,7 @@ $_SESSION['texto'.$_SESSION['i']]=imagecreatefrompng($pathfondo);
 $color_texto=imagecolorallocate($_SESSION['texto'.$_SESSION['i']], $_SESSION['colortexto']['r'], $_SESSION['colortexto']['g'], $_SESSION['colortexto']['b']);
 imagettftext($_SESSION['texto'.$_SESSION['i']], $_SESSION['size'], 0, $_SESSION['X'], $_SESSION['Y'], $color_texto,'./fuentes/'.$_SESSION['fuente'].'.ttf' , $_SESSION['texto']);
 imagepng($_SESSION['texto'.$_SESSION['i']], session_id().$_SESSION['i'].'.png');
-
+//USO DE :imagettftext($image, $size, $angle, $x, $y, $color, $fontfile, $text);
 var_dump($_SESSION);
 var_dump($pathfondo);
 //imagepng($_SESSION['texto'.$_SESSION['i']]);
