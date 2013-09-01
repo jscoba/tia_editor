@@ -6,7 +6,7 @@
 <p>¿Qu&eacute; deseas introducir en tu imagen?</p>
 <br>
 <a href="introducirtexto.php?<?php echo session_name()."=".session_id(); ?>" >Texto</a> <br>
-<a href="introducirimg.php?<?php echo session_name()."=".session_id(); ?>" >Imagen</a>
+<a href="subirimg.php?<?php echo session_name()."=".session_id(); ?>" >Imagen</a>
 
 <br>
 <a href="third.php?<?php echo session_name()."=".session_id(); ?>" ><button>Finalizar</button></a>

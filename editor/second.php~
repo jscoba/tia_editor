@@ -7,3 +7,6 @@
 <br>
 <a href="introducirtexto.php?<?php echo session_name()."=".session_id(); ?>" >Texto</a> <br>
 <a href="introducirimg.php?<?php echo session_name()."=".session_id(); ?>" >Imagen</a>
+
+<br>
+<a href="third.php?<?php echo session_name()."=".session_id(); ?>" ><button>Finalizar</button></a>

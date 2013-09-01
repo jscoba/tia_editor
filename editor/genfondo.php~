@@ -11,6 +11,6 @@ $_SESSION['fondo']= imagecreate(1900, 952);
 $color_fondo=imagecolorallocate($_SESSION['fondo'], $_SESSION['colorfondo']['r'], $_SESSION['colorfondo']['g'], $_SESSION['colorfondo']['b']);
 imagefill($_SESSION['fondo'], 0, 0, $color_fondo);
 imagepng($_SESSION['fondo']);
-imagepng($_SESSION['fondo'],session_id().$_SESSION['i'].'png');
+imagepng($_SESSION['fondo'],session_id().$_SESSION['i'].'.jpg');
 imagedestroy($_SESSION['fondo']);
 ?>
