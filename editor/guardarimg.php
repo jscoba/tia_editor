@@ -29,19 +29,16 @@ $orig_Alto =$tamano[1];
 
 //var_dump($tipo);
 switch($tipo){
-    case "jpg":
+    case "jpg" | 'JPG' | 'JPE' | 'jpe':
           $importada=imagecreatefromjpeg($imgtoadd);
       break;
-    case "png":
+    case "png" | 'PNG':
           $importada=imagecreatefrompng($imgtoadd);
       break;
-    case "gif":
+    case "gif" | 'GIF':
           $importada=imagecreatefromgif($imgtoadd);
     break;
-    case "jpeg":
-    		$importada=imagecreatefromjpeg($imgtoadd);
-    break;
-    case "bmp":
+    case "bmp" | 'BMP':
     		$importada=imagecreatefromwbmp($filename);
     break;
  }

@@ -20,7 +20,7 @@ function pararmoverimagen(){
 	}
 
 function actualizarimagen(){
-	$zoom=document.getElementById('zoom').value*2 + '%';	
+	$zoom=document.getElementById('zoom').value/2 + '%';	
 	
 	$sitio=document.getElementById('imagen');
 	$sitio.style.zoom=$zoom;

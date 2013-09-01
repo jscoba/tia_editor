@@ -7,7 +7,7 @@ Header("Content-type: image/png");
 
 
 
-$_SESSION['fondo']= imagecreatetruecolor(1900, 952);
+$_SESSION['fondo']= imagecreate(1900, 952);
 $color_fondo=imagecolorallocate($_SESSION['fondo'], $_SESSION['colorfondo']['r'], $_SESSION['colorfondo']['g'], $_SESSION['colorfondo']['b']);
 imagefill($_SESSION['fondo'], 0, 0, $color_fondo);
 imagepng($_SESSION['fondo']);

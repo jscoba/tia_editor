@@ -56,7 +56,7 @@ $image=imagecreatetruecolor(1900, 952);
 imagecopyresampled($image, $imgbase, 0,0,0,0, 1900, 952, 1900, 952);
 imagecopyresampled($image, $importada, $_SESSION['X'], $_SESSION['Y'], 0, 0, $ancho_final, $alto_final, $tamano[0], $tamano[1]);
 
-imagepng($imgbase, session_id().$_SESSION['i'].'.png');
+imagepng($image, session_id().$_SESSION['i'].'.png');
 
 
 header ("Location: second.php?".session_name()."=".session_id());

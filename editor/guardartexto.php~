@@ -26,7 +26,7 @@ $_SESSION['texto']=$_POST['text'];
 $_SESSION['size']=(int)$_POST['size'];
 $_SESSION['fuente']=$_POST['font'];
 $_SESSION['X']=(int)$_POST['X'];
-$_SESSION['Y']=(int)($_POST['Y']-$_SESSION['size']);
+$_SESSION['Y']=(int)($_POST['Y']+$_SESSION['size']);
 
 if(file_exists(session_id().($_SESSION['i']-1).'.png'))
 {
