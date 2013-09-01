@@ -8,11 +8,11 @@ $_SESSION['X']=(int)$_POST['X'];
 $_SESSION['Y']=(int)$_POST['Y'];
 $zoom=((int)$_POST['zoom'])/100;
 //Imagen base
-if(file_exists(session_id().($_SESSION['i']-1).'.jpg'))
+if(file_exists(session_id().($_SESSION['i']-1).'.png'))
 {
-	$pathfondo=session_id().($_SESSION['i']-1).'.jpg';
+	$pathfondo=session_id().($_SESSION['i']-1).'.png';
 } else {
-	$pathfondo='fondo.jpg';	
+	$pathfondo='fondo.png';	
 }
 
 $imgbase=imagecreatefrompng($pathfondo);
@@ -52,10 +52,11 @@ $ampliacion_Y=$zoom;
 # dimensiones del soporte
 $ancho_final=$tamano[0]*$ampliacion_X;
 $alto_final=$tamano[1]*$ampliacion_Y;
+$image=imagecreatetruecolor(1900, 952);
+imagecopyresampled($image, $imgbase, 0,0,0,0, 1900, 952, 1900, 952);
+imagecopyresampled($image, $importada, $_SESSION['X'], $_SESSION['Y'], 0, 0, $ancho_final, $alto_final, $tamano[0], $tamano[1]);
 
-imagecopyresampled($imgbase, $importada, $_SESSION['X'], $_SESSION['Y'], 0, 0, $ancho_final, $alto_final, $tamano[0], $tamano[1]);
-
-imagejpeg($imgbase, session_id().$_SESSION['i'].'.jpg');
+imagepng($imgbase, session_id().$_SESSION['i'].'.png');
 
 
 header ("Location: second.php?".session_name()."=".session_id());
