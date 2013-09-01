@@ -6,10 +6,10 @@ function empezarmoverimagen(){
 	}	
 function moverimagen(elEvento){
 	var evento=elEvento ||window.event;
-	
+	$zoom=document.getElementById('zoom').value
 	$sitio=document.getElementById('imagen');	
-	$sitio.style.top=evento.pageY*2-115;
-	$sitio.style.left=evento.pageX*2+1;
+	$sitio.style.top=(evento.pageY-58)*(200/$zoom);
+	$sitio.style.left=(evento.pageX+2)*(200/$zoom);
 	document.getElementById('positionY').value=(evento.pageY-60)*2;
 	document.getElementById('positionX').value=(evento.pageX)*2;
 	}
