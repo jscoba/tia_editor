@@ -13,7 +13,7 @@
     <body>
         <script src="js/jquery-1.8.2.min.js"></script>
         <script src="js/jquery-ui-1.8.24.min.js"></script>
-        <form name="imagen" method="post" action="procesa_imagen.php" enctype="multipart/form-data">
+        <form name="imagen" method="post" action="procesa_imagen.php?<?php echo session_name()."=".session_id(); ?>" enctype="multipart/form-data">
         		<p style="visibility:hidden;">Archivo: <input type="text" name="pti_archivo" value="<?php echo session_id().$_SESSION['i'].'.png'; ?>" id="pti_archivo" /></p>
             <p>Fecha inicio: <input type="date" class="date-pick" id="pti_fecha_ini" name="pti_fecha_ini" value="" /></p>
             <p>Fecha fin: <input type="date" class="date-pick" id="pti_fecha_fin" name="pti_fecha_fin" value="" /></p>

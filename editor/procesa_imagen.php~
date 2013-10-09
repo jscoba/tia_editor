@@ -1,4 +1,7 @@
 <?php
+	session_cache_limiter('nocache,private');
+	session_name('editor');
+	session_start();
   include "config.php";
   /* Crear el registro. */
   mysql_connect(MYSQL_SERVER, MYSQL_USERNAME, MYSQL_PASSWORD) or die(mysql_error());
@@ -24,7 +27,12 @@
   $yeah= copy($_POST["pti_archivo"], $file_final_path); //move_uploaded_file($_FILES["pti_archivo"]["tmp_name"], $file_final_path); 
 
 	//$yeah=move_uploaded_file($_FILES["pti_archivo"]["tmp_name"], "/devel-tia/tia-upload/");
-  
+	$i=$_SESSION['i'];
+	while ($i >= 0){
+		$filename=session_id().$_SESSION['i'].'.png';
+		unlink($filename);
+		$i--;
+  	}
 ?>
 
-<a href="nueva_imagen.html">Otra imagen</a>
+<a href="first.php">Otra imagen</a>
