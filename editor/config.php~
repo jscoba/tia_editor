@@ -1,9 +1,0 @@
-<?php
-
-  define('MYSQL_SERVER',          'localhost');
-  define('MYSQL_DATABASE',        'profundiza');
-  define('MYSQL_USERNAME',        'prufun');
-  define('MYSQL_PASSWORD',        'profun');
-  define('UPLOAD_PATH',           '/var/www/tia-alu-public/upload/');
-
-?>
