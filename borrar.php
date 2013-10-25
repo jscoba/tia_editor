@@ -6,7 +6,7 @@ include_once 'config.php';
  
 /* Consulta imágenes por fecha (activas para hoy). */
 $fecha = date("Y-n-j");
-$consulta = "SELECT * FROM `pro_t_imagenes` "/*WHERE `pti_fecha_ini` <= '".$fecha."' AND `pti_fecha_fin` >= '". $fecha."'"*/;
+$consulta = "SELECT * FROM `pro_t_imagenes` WHERE `pti_fecha_ini` <= '".$fecha."' AND `pti_fecha_fin` >= '". $fecha."'";
 $resultado = mysql_query($consulta) or die(mysql_error());
 
 
